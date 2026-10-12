@@ -18,10 +18,10 @@
 
 
                                                          
-                                                Select Your Moster:
+                                          Select Your Moster:
                                                              
-                                                1.Dragon (HP 120 ATK 12)
-                                                2.WOlf   (HP 90 ATK 16)
-                                                3.Slime  (HP 150 ATK 30)
-                                                4.Bear  (HP 180 ATK 7)
+                                          1.Dragon (HP 120 ATK 12)
+                                          2.WOlf   (HP 90 ATK 16)
+                                          3.Slime  (HP 150 ATK 30)
+                                          4.Bear  (HP 180 ATK 7)
 
