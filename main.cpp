@@ -79,7 +79,7 @@ Monster createYourMonster(int SelectedMonster){
     switch(SelectedMonster)
     {
         case 1:
-        return Monster("Dragon", "",120, 12, "🐉");
+        return Monster("Dragon", "",120, 12, "🐲");
         
         case 2:
             return Monster("wolf", "", 90, 16, "🐺");
@@ -171,18 +171,18 @@ void drawBattle(Monster& playerMonster, Monster& enemyMONster){
     enemyMONster.displayStatus();
 }
 
-void monsterBattle(Monster& playerMonster, Monster& enemyMONster){
+void monsterBattle(Monster& playerMonster, Monster& enemyMonster){
 
-    while(playerMonster.isAlive() && enemyMONster.isAlive())
+    while(playerMonster.isAlive() && enemyMonster.isAlive())
     {
-        drawBattle(playerMonster,enemyMONster);
-        playerMonster.attack(enemyMONster);
+        drawBattle(playerMonster,enemyMonster);
+        playerMonster.attack(enemyMonster);
         sleepMs(1500);
 
-        drawBattle(playerMonster,enemyMONster);
-        if(enemyMONster.getHP()>0)
+        drawBattle(playerMonster,enemyMonster);
+        if(enemyMonster.getHP()>0)
         {
-        enemyMONster.attack(playerMonster);
+        enemyMonster.attack(playerMonster);
         sleepMs(1500);
         }
         
@@ -208,7 +208,7 @@ void startAdventure(Monster& playerMonster)
 
                 sleepMs(1000);//1 second wait
 
-                Monster enemyMonster("Goblin", "Goblin Minion",60, 1, "🧌");
+                Monster enemyMonster("Goblin", "Goblin Minion",60, 1, "👺");
                 monsterBattle(playerMonster,enemyMonster);
             }
             if(!playerMonster.isAlive())
@@ -223,10 +223,20 @@ void startAdventure(Monster& playerMonster)
         {
             cout<<"\n";
             cout<<"A powerful aura can be felt...\n";
-            Monster enemyBoss("Boss","Goblin Boss",200,50, "⚔️🧟‍♂️⚔️");
+            Monster enemyBoss("Boss","Goblin Boss",100,50, "⚔️🧌⚔️");
             sleepMs(2000);
 
             monsterBattle(playerMonster,enemyBoss);
+
+            if(playerMonster.isAlive()){
+                clearScreen();
+                cout<<"Level cleared!\n";
+
+            }
+            else{
+                cout<<"\n";
+                cout<< playerMonster.getName()<<" Fainted...\n";
+            }
         }
         else{
             clearScreen();
