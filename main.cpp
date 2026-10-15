@@ -5,7 +5,7 @@
 using namespace std;
 //utilities
 #ifdef _win32
-    #include <windows.h>
+    #include <Windows.h>
 #endif
 
 void sleepMs(int ms){
